@@ -33,6 +33,7 @@ public class FingerprintHandler extends FingerprintManager.AuthenticationCallbac
     @Override
     public void onAuthenticationError(int errMsgId,
                                       CharSequence errString) {
+        cancelAuthenticationSignal();
         if (!selfCancelled) {
             mCallback.onError(errString.toString());
         }
